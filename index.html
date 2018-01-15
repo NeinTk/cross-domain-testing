@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+</head>
+<body>
+<script>
+function test() {
+	$.post('https://easytop.ilnuovosito.com/neweasytop/lib/api/seogen_service.php?format=txt', {
+		'apitoken': 'WW1SAJl7nBj9AglxlwO4UHk4FiCKaFidBCEP4oNU2xSbWNF5HanFRXibPusXmF7x', 
+		'qty': 10, 
+		'tables': ['azioni']
+	}).done(function(data) {
+		console.log(data);
+		$('p#success').text('SUCCESS!');
+	}).fail(function(xhr, status, error) {
+                console.log(xhr, error.statusText, error.statusCode);
+		$('p#success').text('ERROR!');
+        });
+}
+test();
+</script>
+<p id="success">CONNECTING...</p>
+</body>
+</html>
